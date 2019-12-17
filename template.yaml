@@ -24,6 +24,9 @@ Resources:
         - DynamoDBCrudPolicy:
             TableName: !Ref ExampleTable
       MemorySize: 3008
+      Runtime: nodejs10.x
+    Metadata:
+      RuntimeOption: typescript
   ExampleTable:
     TableName: !Sub ${ProjectName}-exampletable-${Stage}
     Type: AWS::Serverless::SimpleTable
